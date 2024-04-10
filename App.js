@@ -1,17 +1,15 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import LoginScreen from "./screens/LoginScreen";
+import { SafeAreaView } from "react-native";
+import LoginScreen from "./screens/Login/LoginScreen";
+import { globalStyles } from "./styles/globalStyles";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={globalStyles.container} >
       <LoginScreen />
-    </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

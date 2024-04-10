@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { View } from "react-native";
-import LoginForm from "../components/LoginForm";
-import { login } from "../services/api";
-import { globalStyles } from "../styles/globalStyles";
+import LoginForm from "../../components/LoginForm";
+import { LoginApi } from "../../services/api";
+import { globalStyles } from "../../styles/globalStyles";
 
 const LoginScreen = () => {
+
   const [error, setError] = useState("");
   const [credentials, setCredentials] = useState({
     username: "",
@@ -17,11 +18,10 @@ const LoginScreen = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await login(credentials);
-      console.log(response);
+      const response = await LoginApi (credentials);
       setRespuesta(response);
     } catch (error) {
-      setError("Error en la conexión: " + error);
+      setError("Error: " + error);
     }
   };
 
@@ -33,6 +33,7 @@ const LoginScreen = () => {
         login={handleLogin}
         error={error}
         respuesta={respuesta}
+        setRespuesta={setRespuesta}
       />
     </View>
   );

@@ -4,9 +4,24 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
     backgroundColor: "dodgerblue",
+  },
+  containerTop: {
+    paddingTop: 30,
+    alignItems: 'center',
+  },
+  containerRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    justifyContent: 'space-between',
+    backgroundColor: "#cfcfcf",
+    width: "80%",
+  },
+  containerScroll: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "dodgerblue"
   },
   title: {
     fontSize: 30,
@@ -22,8 +37,8 @@ export const globalStyles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "gray",
     padding: 10,
-    marginBottom: 10,
-    
+    margin: 12,
+    height: 40,
   },
   errorText: {
     fontSize: 20,
@@ -38,5 +53,9 @@ export const globalStyles = StyleSheet.create({
   imagen200: {
     width: 200,
     height: 200,
+    resizeMode: "contain",
+  },
+  containerCentrado: {
+    alignItems: 'center',
   },
 });
